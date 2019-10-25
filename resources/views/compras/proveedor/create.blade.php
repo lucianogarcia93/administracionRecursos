@@ -81,11 +81,21 @@
                         </div>
                     </div>
 
-                                    
-               
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <label >Puntuacion</label>
+                            
+                            <select name="puntuacion" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
+                                @for ($puntuacion = 1; $puntuacion <= 10; $puntuacion++)
+                                    <option value="{{old ('puntuacion')}}" >{{$puntuacion}}</option>
+                                @endfor
+
+                            </select>
+                        </div>
+                    </div>
 
                 <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                    <div class="form-group">
+                    <div class="form-group" >
                         
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         

@@ -132,10 +132,17 @@
               </ul>
             </li>
              <li>
-              <a href="#">
-                <i class="fa fa-plus-square"></i> <span>Reporte</span>
-                <small class="label pull-right bg-red">PDF</small>
-              </a>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-plus-square"></i> <span>Reporte</span>
+                        <small class="label pull-right bg-red">PDF</small>
+                    </a>
+                    <ul class="treeview-menu">
+                      <li><a href=""><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                      
+                    </ul>
+                </li>
+             
             </li>
             <li>
               <a href="#">

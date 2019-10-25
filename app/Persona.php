@@ -20,7 +20,8 @@ class Persona extends Model
     'num_documento',
     'direccion',
     'telefono',
-    'email'
+    'email',
+    'puntuacion'
 
    ];
 
