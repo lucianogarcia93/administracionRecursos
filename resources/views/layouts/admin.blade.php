@@ -57,7 +57,7 @@
                     
                     <p>
                       www.desarrollofacil.com - Desarrollando Software
-                      <small>www.youtube.com/jcarlosad7</small>
+                      <small></small>
                     </p>
                   </li>
                   
@@ -93,8 +93,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="almacen/articulo"><i class="fa fa-circle-o"></i> Artículos</a></li>
-                <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Categorías</a></li>
+                <li><a href="{{url('/almacen/articulo')}}"><i class="fa fa-circle-o"></i> Artículos</a></li>
+                <li><a href="{{url('/almacen/categoria')}}"><i class="fa fa-circle-o"></i> Categorías</a></li>
               </ul>
             </li>
             
@@ -105,8 +105,8 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-circle-o"></i> Ingresos</a></li>
-                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                <li><a href="{{url('/compras/ingreso')}}"><i class="fa fa-circle-o"></i> Ingresos</a></li>
+              <li><a href="{{url('/compras/proveedor')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -116,8 +116,8 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="ventas/venta"><i class="fa fa-circle-o"></i> Ventas</a></li>
-                <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
+                <li><a href="{{url('/ventas/venta')}}"><i class="fa fa-circle-o"></i> Ventas</a></li>
+                <li><a href="{{url('/ventas/cliente')}}"><i class="fa fa-circle-o"></i> Clientes</a></li>
               </ul>
             </li>
                        
@@ -133,7 +133,7 @@
             </li>
              <li>
               <a href="#">
-                <i class="fa fa-plus-square"></i> <span>Ayuda</span>
+                <i class="fa fa-plus-square"></i> <span>Reporte</span>
                 <small class="label pull-right bg-red">PDF</small>
               </a>
             </li>

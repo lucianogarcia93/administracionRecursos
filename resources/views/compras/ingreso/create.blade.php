@@ -176,7 +176,7 @@
             });
 
             var cont=0;
-            total=0;
+            var total=0;
             subtotal=[];
             $("#guardar").hide();
 
