@@ -139,7 +139,7 @@
                         <small class="label pull-right bg-red">PDF</small>
                     </a>
                     <ul class="treeview-menu">
-                      <li><a href=""><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                      <li><a href="{{url('/reportes/listadeprooverdores')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
                       
                     </ul>
                 </li>

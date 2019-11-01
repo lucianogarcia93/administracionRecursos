@@ -23,8 +23,15 @@ Route:: resource('compras/tecnico','TecnicoController');
 Route:: resource('compras/ingreso','IngresoController');
 Route:: resource('ventas/venta','VentaController');
 Route:: resource('seguridad/usuario','UsuarioController');
-Route:: resource('reportes/listadoproveedores','UsuarioController');
-Auth::routes();
+//Route:: resource('reportes/listadoproveedores','UsuarioController');
+
+Route::get('reportes/listadeprooverdores', function () {
+    $pdf=PDF::loadHtml('Prueba');
+    return $pdf->stream();
+    Auth::routes();
+});
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout','Auth\LoginController@logout');
