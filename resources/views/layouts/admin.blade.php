@@ -107,6 +107,7 @@
               <ul class="treeview-menu">
                 <li><a href="{{url('/compras/ingreso')}}"><i class="fa fa-circle-o"></i> Ingresos</a></li>
               <li><a href="{{url('/compras/proveedor')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
+              <li><a href="{{url('/compras/tecnico')}}"><i class="fa fa-circle-o"></i> Tecnicos</a></li>
               </ul>
             </li>
             <li class="treeview">

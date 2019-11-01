@@ -13,7 +13,7 @@
                     <div class="table responsive">
                         <table class="table table-striped table-bordered table-condensed table-hover">
                             <thead>
-                                <th>Id</th>
+                              
                                 <th>Nombre</th>
                                 <th>Codigo</th>
                                 <th>Categoria</th>
@@ -25,7 +25,7 @@
                             </thead>
                             @foreach($articulos as $art) <!--la variable que recibo del controlador la guardo en cat y la muestro-->
                                 <tr>
-                                    <td>{{$art->idarticulo}}</td>
+                                    
                                     <td>{{$art->nombre}}</td>
                                     <td>{{$art->codigo}}</td>
                                     <td>{{$art->categoria}}</td>

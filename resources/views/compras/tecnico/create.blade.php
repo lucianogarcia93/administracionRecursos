@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
-            <h3>Nuevo Articulo</h3>
+            <h3>Nuevo Tecnico</h3>
 
                 @if(count($errors) > 0)
                 <div class="alert alert-danger">
@@ -21,7 +21,7 @@
         </div>
   </div>
 
-                {!!Form::open(array('url'=>'almacen/articulo','method'=>'POST','autocomplete'=>'off','files'=>'true')) !!}
+                {!!Form::open(array('url'=>'compras/tecnico','method'=>'POST','autocomplete'=>'off')) !!}
                 {{Form::token()}}
 
                 <div class="row">
@@ -29,20 +29,18 @@
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
                             <label for="nombre" class="">Nombre</label>
-                            <input type="text" name="nombre" required value="{{old ('nombre')}}" class="form-control " >
+                            <input type="text" name="nombre" required value="{{old ('nombre')}}" class="form-control "placeholder="Nombre...">
                         </div>
                     </div>
-
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
-                            <label for="nombre" class="">Categoria</label>
-                            <select name="idcategoria" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
-                                @foreach($categorias as $cat)
+                            <label >Documento</label>
+                            <select name="tipo_documento" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
+                
+                                    <option value="DNI">DNI</option>
+                                    <option value="DU">DU</option>
+                                    <option value="PAS">PASAPORTE</option>
 
-                                    <option value="{{$cat->idcategoria}}">{{$cat->nombre}}</option>
-
-                                @endforeach
-                            
                             </select>
                         </div>
                     </div>
@@ -50,17 +48,16 @@
 
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
-                            <label for="codigo" class="">Codigo</label>
-                            <input type="text" name="codigo" required value="{{old ('codigo')}}" class="form-control "placeholder="codigo..." >
+                            <label for="num_documento" class="">Numero de Documento</label>
+                            <input type="text" name="num_documento" value="{{old ('num_documento')}}" class="form-control "placeholder="Numero de documento..." >
                         </div>    
 
                     </div>
 
-
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
-                                <label for="stock" class="">Stock</label>
-                                <input type="text" name="stock" required value="{{old ('stock')}}" class="form-control "placeholder="Stock del articulo..." >
+                                <label for="telefono" class="">Telefono</label>
+                                <input type="text" name="telefono"  value="{{old ('telefono')}}" class="form-control "placeholder="Numero de telefono..." >
                         </div>
                     </div>
 
@@ -68,25 +65,14 @@
 
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
-                                <label for="descripcion" class="">Descripcion</label>
-                                <input type="text" name="descripcion" value="{{old ('descripcion')}}" class="form-control "placeholder="Descripcion del articulo..." >
+                                <label for="email" class="">Email</label>
+                                <input type="text" name="email" value="{{old ('email')}}" class="form-control "placeholder="Email..." >
                         </div>
                     </div>
 
                     
-
-                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                        <div class="form-group">
-                                <label for="descripcion" class="">Imagen</label>
-                                <input type="file" name="imagen" class="form-control " >
-                        </div>
-                    </div>
-                
-                
-                </div>
-
                 <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                    <div class="form-group">
+                    <div class="form-group" >
                         
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         
@@ -95,6 +81,8 @@
                         
                     </div>
                </div>
+               
+        </div>
 
 
                 {!!Form::close()!!}
