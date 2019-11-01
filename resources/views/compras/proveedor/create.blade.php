@@ -45,11 +45,7 @@
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
                             <label >Documento</label>
-                            <select name="tipo_documento" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
-                
-                                    <option value="DNI">DNI</option>
-                                    <option value="DU">DU</option>
-                                    <option value="PAS">PASAPORTE</option>
+                            <input type="text" value="CUIT" name="tipo_documento" id="documento">
 
                             </select>
                         </div>
@@ -84,11 +80,7 @@
                         <div class="form-group">
                             <label >Puntuacion</label>
                             
-                            <select name="puntuacion" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
-                                @for ($puntuacion = 1; $puntuacion <= 10; $puntuacion++)
-                                    <option value="{{old ('puntuacion')}}" >{{$puntuacion}}</option>
-                                @endfor
-
+                                <input type="number" name="puntuacion" id="puntuacion" min="1" max="10" step="1" value="1">
                             </select>
                         </div>
                     </div>

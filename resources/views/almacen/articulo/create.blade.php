@@ -72,7 +72,13 @@
                                 <input type="text" name="descripcion" value="{{old ('descripcion')}}" class="form-control "placeholder="Descripcion del articulo..." >
                         </div>
                     </div>
-
+                    
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                        <div class="form-group">
+                                <label for="descripcion" class="">Fecha de Vencimiento de Garantia</label>
+                                <input type="date" name="fecha_venc">
+                        </div>
+                    </div>
                     
 
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">

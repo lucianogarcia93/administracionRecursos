@@ -110,40 +110,7 @@
               <li><a href="{{url('/compras/tecnico')}}"><i class="fa fa-circle-o"></i> Tecnicos</a></li>
               </ul>
             </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-shopping-cart"></i>
-                <span>Ventas</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="{{url('/ventas/venta')}}"><i class="fa fa-circle-o"></i> Ventas</a></li>
-                <li><a href="{{url('/ventas/cliente')}}"><i class="fa fa-circle-o"></i> Clientes</a></li>
-              </ul>
-            </li>
-                       
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-folder"></i> <span>Acceso</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                
-              </ul>
-            </li>
-             <li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-plus-square"></i> <span>Reporte</span>
-                        <small class="label pull-right bg-red">PDF</small>
-                    </a>
-                    <ul class="treeview-menu">
-                      <li><a href="{{url('/reportes/listadeprooverdores')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
-                      
-                    </ul>
-                </li>
-             
+ 
             </li>
             <li>
               <a href="#">

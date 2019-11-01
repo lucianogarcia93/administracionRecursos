@@ -20,6 +20,7 @@ class Articulo extends Model
     'stock',
     'descripcion',
     'imagen',
+    'fecha_venc',
     'estado'
    ];
 

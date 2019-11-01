@@ -47,13 +47,9 @@ class ProveedorController extends Controller
         $persona->num_documento =$request->get('num_documento');
         $persona->direccion=$request->get('direccion');
         $persona->telefono =$request->get('telefono');
-        $persona->email =$request->get('email');
-        if ( $persona->puntuacion='NULL'){
-            $persona->puntuacion='1';
-
-        }else {
-            $persona->puntuacion=$request->get('puntuacion');
-        }
+        $persona->email =$request->get('email');    
+        $persona->puntuacion=$request->get('puntuacion');
+        
        
         $persona->save();
         return Redirect::to('compras/proveedor');

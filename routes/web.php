@@ -26,13 +26,38 @@ Route:: resource('seguridad/usuario','UsuarioController');
 //Route:: resource('reportes/listadoproveedores','UsuarioController');
 
 Route::get('reportes/listadeprooverdores', function () {
-    $pdf=PDF::loadHtml('Prueba');
+    $pdf=PDF::loadHtml('
+
+   
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="table responsive">
+                <table class="table table-striped table-bordered table-condensed table-hover">
+                    <thead>
+                       
+                        <th>Nombre</th>
+                        <th>Tipo Doc.</th>
+                        <th>Numero de Doc.</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Puntuacion</th>
+                        
+
+                    </thead>    
+                </table>
+            </div>
+        </div>
+    </div>'
+                
+                
+                );
     return $pdf->stream();
-    Auth::routes();
+    
 });
 
 
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout','Auth\LoginController@logout');
+Auth::routes();
 

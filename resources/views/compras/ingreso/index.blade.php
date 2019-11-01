@@ -19,7 +19,7 @@
                                 <th>Comprobante</th>
                                 <th>Impuesto</th>
                                 <th>Total</th>
-                                <th>Estado</th>
+                                <th>Fecha Venc.</th>
                                 <th>Opciones</th>
 
                             </thead>
@@ -32,7 +32,8 @@
                                     <td>{{$ing->tipo_comprobante.':'.$ing->num_comprobante.'-'.$ing->serie_comprobante}}</td>
                                     <td>{{$ing->impuesto}}</td>
                                     <td>{{$ing->total}}</td>
-                                    <td>{{$ing->estado}}</td>
+                                    <td>{{$ing->}}</td>
+                                   
 
 
                                     <td>

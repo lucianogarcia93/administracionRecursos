@@ -105,13 +105,7 @@
                                     </div>
                             
                                 </div>
-                                <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
-                                    <div class="form-group">
-                                        <label for="precio_venta">Precio Venta</label>
-                                        <input type="number" name="pprecio_venta" id="pprecio_venta" class="form-control" placeholder="P. Venta">
-                                    </div>
-                            
-                                </div>
+                                
 
                                 <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                                     <div class="form-group">
@@ -127,7 +121,6 @@
                                             <th>Articulo</th>
                                             <th>Cantidad</th>
                                             <th>Precio Compra</th>
-                                            <th>Precio Venta</th>
                                             <th>Subtotal</th>
                                         </thead>
                                         <tfoot>
@@ -185,14 +178,19 @@
                 articulo=$("#pidarticulo option:selected").text();
                 cantidad=$("#pcantidad").val();
                 precio_compra=$("#pprecio_compra").val();
-                precio_venta=$("#pprecio_venta").val();
+                //precio_venta=$("#pprecio_venta").val();
 
-                if (idarticulo!="" && cantidad!="" && cantidad>0 && precio_compra!="" && precio_venta!="")
+                if (idarticulo!="" && cantidad!="" && cantidad>0 && precio_compra!="")
                 {
                 subtotal[cont]=(cantidad*precio_compra);
                 total=total+subtotal[cont];
 
-                var fila='<tr class="selected" id="fila'+cont+'"><td><button type="button" class="btn btn-warning" onclick="eliminar('+cont+');">X</button></td><td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td><td><input type="number" name="cantidad[]" value="'+cantidad+'"></td><td><input type="number" name="precio_compra[]" value="'+precio_compra+'"></td><td><input type="number" name="precio_venta[]" value="'+precio_venta+'"></td><td>'+subtotal[cont]+'</td></tr>';
+                var fila='<tr class="selected" id="fila'+cont+
+                '"><td><button type="button" class="btn btn-warning" onclick="eliminar('+cont+');">X</button></td><td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'
+                    +articulo+'</td><td><input type="number" name="cantidad[]" value="'+cantidad+
+                    '"></td><td><input type="number" name="precio_compra[]" value="'+precio_compra+
+                    '"></td><td><input type="number" name="precio_venta[]" value="'+subtotal[cont]+
+                    '"></td>';
                 cont++;
                 limpiar();
                 $('#total').html("$ " + total);

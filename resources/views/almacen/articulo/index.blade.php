@@ -19,7 +19,8 @@
                                 <th>Categoria</th>
                                 <th>Stock</th>
                                 <th>Imagen</th>
-                                <th>Estado</th>
+                               
+                                <th>Fecha de Vencimiento</th>
                                 <th>Opciones</th>
         
                             </thead>
@@ -30,11 +31,12 @@
                                     <td>{{$art->codigo}}</td>
                                     <td>{{$art->categoria}}</td>
                                     <td>{{$art->stock}}</td>
+                                    
                                     <td>
                                         
                                         <img src="{{asset('imagenes/articulos/'.$art->imagen)}}" alt="{{$art->nombre}}" height="100px" width="100px" class="img-thumbnail">
                                     </td>
-                                    <td>{{$art->estado}}</td>
+                                   <td>{{$art->fecha_venc}}</td>
 
                                     <td>
                                         

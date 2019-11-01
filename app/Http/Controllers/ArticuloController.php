@@ -26,7 +26,7 @@ class ArticuloController extends Controller
             $query=trim($request->get('searchText'));
             $articulos=DB::table('articulo as a')
             ->join('categoria as c','a.idcategoria','=','c.idcategoria')
-            ->select('a.idarticulo','a.nombre','a.codigo','a.stock','c.nombre as categoria','a.descripcion','a.imagen','a.estado')
+            ->select('a.idarticulo','a.nombre','a.codigo','a.stock','c.nombre as categoria','a.descripcion','a.imagen','a.estado','a.fecha_venc')
             ->where('a.nombre','LIKE','%'.$query.'%')
             ->orwhere('a.codigo','LIKE','%'.$query.'%')
             ->orderBy('a.idarticulo','desc')
@@ -50,6 +50,7 @@ class ArticuloController extends Controller
         $articulo->stock =$request->get('stock');
         $articulo->descripcion =$request->get('descripcion');
         $articulo->estado ='Activo';
+        $articulo->fecha_venc=$request->get('fecha_venc');
         if(Input::hasFile('imagen'))
         {
             $file=Input::file('imagen');
