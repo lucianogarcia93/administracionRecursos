@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
+    return view('auth/institucional');
+});
+Route::get('/s', function () {
     return view('auth/login');
 });
+
+
 
 Route:: resource('almacen/categoria','CategoriaController');
 Route:: resource('almacen/articulo','ArticuloController');
