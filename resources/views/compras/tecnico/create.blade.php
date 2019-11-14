@@ -38,8 +38,8 @@
                             <select name="tipo_documento" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
                 
                                     <option value="DNI">DNI</option>
-                                    <option value="DU">DU</option>
-                                    <option value="PAS">PASAPORTE</option>
+                                    <option value="CUIL">CUIL</option>
+                                    
 
                             </select>
                         </div>
@@ -67,6 +67,20 @@
                         <div class="form-group">
                                 <label for="email" class="">Email</label>
                                 <input type="text" name="email" value="{{old ('email')}}" class="form-control "placeholder="Email..." >
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="nombre" class="">Proveedor</label>
+                            <select name="idpersona" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
+                                @foreach( $personas as $prov)
+
+                                    <option value="{{$prov->idpersona}}">{{$prov->nombre}}</option>
+
+                                @endforeach
+                            
+                            </select>
                         </div>
                     </div>
 
