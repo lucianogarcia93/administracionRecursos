@@ -1,4 +1,4 @@
-  <?php
+<?php
 
 namespace App\Http\Controllers;
 
@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\ArticuloFormRequest;
 use App\Articulo;
+use App\Categoria;
 use DB;
 use Illuminate\Auth\Middleware\Authenticate;
 
