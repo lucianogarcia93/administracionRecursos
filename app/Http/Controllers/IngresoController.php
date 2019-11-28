@@ -47,7 +47,7 @@ class IngresoController extends Controller
     public function create()
     {
 
-        $tecnicos = DB::table('tecnico')->get(); 
+        $tecnicos = DB::table('tecnico')->get();
         $personas=DB::table('persona')
         ->where('tipo_persona','=','Proveedor')->get();
         $articulos=DB::table('articulo as art')
@@ -72,6 +72,7 @@ class IngresoController extends Controller
             $ingreso->fecha_hora=$mytime->toDateTimeString();
             $ingreso->impuesto = '21';
             $ingreso->estado = 'A';
+            $ingreso->tem=$request->get('tem');
             $ingreso->save();
 
 

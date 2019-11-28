@@ -31,6 +31,8 @@ class VerdtecnicoController extends Controller
             ->paginate(7) ;
             return view('compras.tecnico.index',["tecnicos"=>$tecnicos,"personas"=>$personas,'searchText'=>$query]);
         }
+
+        
     }
     public function create()
     {

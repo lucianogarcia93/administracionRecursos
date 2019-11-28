@@ -42,7 +42,7 @@
                                     <option value="{{$cat->idcategoria}}">{{$cat->nombre}}</option>
 
                                 @endforeach
-                            
+
                             </select>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                         <div class="form-group">
                             <label for="codigo" class="">Codigo</label>
                             <input type="text" name="codigo" required value="{{old ('codigo')}}" class="form-control "placeholder="codigo..." >
-                        </div>    
+                        </div>
 
                     </div>
 
@@ -64,7 +64,7 @@
                         </div>
                     </div>
 
-                    
+
 
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
@@ -72,14 +72,14 @@
                                 <input type="text" name="descripcion" value="{{old ('descripcion')}}" class="form-control "placeholder="Descripcion del articulo..." >
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
                                 <label for="descripcion" class="">Fecha de Vencimiento de garantia</label>
-                                <input type="text" name="descripcion" value="{{old ('descripcion')}}" class="form-control "placeholder="Descripcion del articulo..." >
+                                <input type="date" name="fecha_venc" value="{{old ('descripcion')}}" class="form-control "placeholder="Descripcion del articulo..." >
                         </div>
                     </div>
-                    
+
 
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
@@ -87,18 +87,18 @@
                                 <input type="file" name="imagen" class="form-control " >
                         </div>
                     </div>
-                
-                
+
+
                 </div>
 
                 <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                     <div class="form-group">
-                        
+
                         <button type="submit" class="btn btn-primary">Guardar</button>
-                        
+
                         <button type="reset" class="btn btn-danger">Cancelar</button>
-                        
-                        
+
+
                     </div>
                </div>
 

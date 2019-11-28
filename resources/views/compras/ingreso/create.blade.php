@@ -43,6 +43,7 @@
                                         @foreach($tecnicos as $tec)
   			                                           @if($per->idpersona == $tec->idpersona )
   					                                                 <option value="{{$tec->idpersona}}">{{$tec->nombre}}</option>
+                                                             
        			                                       @endif
                                         @endforeach
                             @endforeach

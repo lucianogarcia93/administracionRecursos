@@ -40,7 +40,7 @@
 
                                     <td>
 
-                                        <a href="{{URL::action('VerdtecnicoController@edit',$per->idpersona)}}"><button type="button" class="btn btn-info">Editar</button></a>
+                                      
                                         <a href="" data-target="#modal-delete-{{$per->idpersona}}" data-toggle="modal">
                                         <button type="button" class="btn btn-danger">Eliminar</button>
                                         </a>

@@ -13,7 +13,7 @@
                     <div class="table responsive">
                         <table class="table table-striped table-bordered table-condensed table-hover">
                             <thead>
-                               
+
                                 <th>Nombre</th>
                                 <th>Tipo Doc.</th>
                                 <th>Numero de Doc.</th>
@@ -21,11 +21,11 @@
                                 <th>Email</th>
                                 <th>Puntuacion</th>
                                 <th>Opciones</th>
-        
+
                             </thead>
                             @foreach($personas as $per) <!--la variable que recibo del controlador la guardo en cat y la muestro-->
                                 <tr>
-                                    
+
                                     <td>{{$per->nombre}}</td>
                                     <td>{{$per->tipo_documento}}</td>
                                     <td>{{$per->num_documento}}</td>
@@ -33,26 +33,26 @@
                                     <td>{{$per->email}}</td>
                                     <td>{{$per->puntuacion}}</td>
                                     <td>
-                                        
-                                        <a href="{{URL::action('ProveedorController@edit',$per->idpersona)}}"><button type="button" class="btn btn-info">Editar</button></a>
+
+                              
                                         <a href="" data-target="#modal-delete-{{$per->idpersona}}" data-toggle="modal">
                                         <button type="button" class="btn btn-danger">Eliminar</button>
                                         </a>
-                                        
+
 
                                     </td>
-                                
+
                                 </tr>
                                 @include('compras.proveedor.modal')
                             @endforeach
                         </table>
                     </div>
                     {{$personas->render()}}
-                
+
                 </div>
-            
+
             </div>
-    
+
 </div>
 
 @endsection
