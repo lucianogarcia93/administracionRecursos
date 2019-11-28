@@ -25,6 +25,12 @@ class Persona extends Model
 
    ];
 
+
+   public function tecnicos()
+{
+		return $this->hasMany(Tecnico::class);
+}
+
    protected $guarded =[
 
    ];

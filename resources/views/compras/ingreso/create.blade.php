@@ -35,19 +35,35 @@
                                 @endforeach
                             </select>
 
+                            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="nombre" class="">Tecnico</label>
+                                    <select name="tem" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
+                          @foreach($personas as $per)
+                                        @foreach($tecnicos as $tec)
+  			                                           @if($per->idpersona == $tec->idpersona )
+  					                                                 <option value="{{$tec->idpersona}}">{{$tec->nombre}}</option>
+       			                                       @endif
+                                        @endforeach
+                            @endforeach
+
+                                    </select>
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
 
-                   
 
-                   
+
+
 
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                         <div class="form-group">
                             <label >Tipo de comprobante</label>
                             <select name="tipo_comprobante" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
-                
+
                                     <option value="Boleta">Boleta</option>
                                     <option value="Factura">Factura</option>
                                     <option value="Ticket">Ticket</option>
@@ -61,20 +77,20 @@
                         <div class="form-group">
                             <label for="serie_comprobante" class="">Serie Comprobante</label>
                             <input type="text" name="serie_comprobante" value="{{old ('serie_comprobante')}}" class="form-control "placeholder="Serie Comprobante..." >
-                        </div>    
+                        </div>
                     </div>
 
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                         <div class="form-group">
                             <label for="num_comprobante" class="">Numero Comprobante</label>
                             <input type="text" name="num_comprobante" required value="{{old ('num_comprobante')}}" class="form-control "placeholder="Numero Comprobante..." >
-                        </div>    
+                        </div>
                     </div>
                 </div>
 
         <div class="row">
                     <div class="panel panel-primary">
-                    
+
                         <div class="panel-body">
                             <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                                 <div class="form-group">
@@ -83,37 +99,37 @@
                                         @foreach($articulos as $articulo )
                                             <option value="{{$articulo->idarticulo}}">{{$articulo->articulo}}</option>
                                         @endforeach
-                                    
+
                                     </select>
-                                
+
                                 </div>
-                            
+
                             </div>
                                 <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                                     <div class="form-group">
                                         <label for="cantidad">Cantidad</label>
                                         <input type="number" name="pcantidad" id="pcantidad" class="form-control" placeholder="Cantidad">
-    
+
                                     </div>
-                            
+
                                 </div>
                                 <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                                     <div class="form-group">
                                         <label for="precio_compra">Precio Compra</label>
                                         <input type="number" name="pprecio_compra" id="pprecio_compra" class="form-control" placeholder="P. Compra">
-                                    
+
                                     </div>
-                            
+
                                 </div>
-                                
+
 
                                 <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                                     <div class="form-group">
-                                        
-                                        <button type="button" class="btn btn-primary" id="bt_add">Agregar</button>                                        
+
+                                        <button type="button" class="btn btn-primary" id="bt_add">Agregar</button>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                                     <table  id="detalles" class="table table-striped table-bordered table-condensed table-hover">
                                         <thead style="background-color:#A9D0F5">
@@ -134,31 +150,31 @@
 
                                         </tfoot>
                                         <tbody>
-                                        
+
                                         </tbody>
 
                                     </table>
                                 </div>
-                        
+
                         </div>
-                    
+
                     </div>
                 <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12" id="guardar">
                     <div class="form-group">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         <button type="reset" class="btn btn-danger">Cancelar</button>
-                        
-                        
+
+
                     </div>
                </div>
-               
+
         </div>
 
 
                 {!!Form::close()!!}
             <!--en esta parte haremos el script para que los productos se agreguen a la lista de detalles y la base de datos -->
-  
+
 @push('scripts')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script>
@@ -218,13 +234,13 @@
                 }
                 else
                 {
-                $("#guardar").hide(); 
+                $("#guardar").hide();
                 }
             }
 
             function eliminar(index){
-            total=total-subtotal[index]; 
-                $("#total").html("$ " + total);   
+            total=total-subtotal[index];
+                $("#total").html("$ " + total);
                 $("#fila" + index).remove();
                 evaluar();
             }

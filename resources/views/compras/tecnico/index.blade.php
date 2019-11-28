@@ -13,45 +13,52 @@
                     <div class="table responsive">
                         <table class="table table-striped table-bordered table-condensed table-hover">
                             <thead>
-                               
-                                <th>Nombre</th>
+
+                                <th>nombre</th>
                                 <th>Tipo Doc.</th>
-                                <th>Numero de Doc.</th>                               
+                                <th>Numero de Doc.</th>
                                 <th>Telefono</th>
                                 <th>Email</th>
-                                <th>Opciones</th>
-        
+                                <th>especializacion</th>
+                                <th>Proveedor</th>
+
                             </thead>
-                            @foreach($personas as $per) <!--la variable que recibo del controlador la guardo en cat y la muestro-->
+                            @foreach($tecnicos as $per) <!--la variable que recibo del controlador la guardo en cat y la muestro-->
                                 <tr>
-                                    
+
                                     <td>{{$per->nombre}}</td>
                                     <td>{{$per->tipo_documento}}</td>
-                                    <td>{{$per->num_documento}}</td>                                   
+                                    <td>{{$per->num_documento}}</td>
                                     <td>{{$per->telefono}}</td>
                                     <td>{{$per->email}}</td>
-                                    
+                                    <td>{{$per->especializacion}}</td>
+                                @foreach($personas as $pe)
+                                 @if($pe->idpersona == $per->idpersona)
+                                    <td>{{$pe->nombre}}</td>
+                                    @endif
+                                @endforeach
+
                                     <td>
-                                        
-                                        <a href="{{URL::action('TecnicoController@edit',$per->idpersona)}}"><button type="button" class="btn btn-info">Editar</button></a>
+
+                                        <a href="{{URL::action('VerdtecnicoController@edit',$per->idpersona)}}"><button type="button" class="btn btn-info">Editar</button></a>
                                         <a href="" data-target="#modal-delete-{{$per->idpersona}}" data-toggle="modal">
                                         <button type="button" class="btn btn-danger">Eliminar</button>
                                         </a>
-                                        
+
 
                                     </td>
-                                
+
                                 </tr>
-                                @include('compras.tecnico.modal')
+
                             @endforeach
                         </table>
                     </div>
-                    {{$personas->render()}}
-                
+                    {{$tecnicos->render()}}
+
                 </div>
-            
+
             </div>
-    
+
 </div>
 
 @endsection

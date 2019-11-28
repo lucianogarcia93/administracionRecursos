@@ -28,30 +28,33 @@ class IngresoController extends Controller
         if($request)
         {
             $query=trim($request -> get('searchText'));// con trim borro los espacios tanto al principio como al final
+            $tecnicos = DB::table('tecnico')->get();
             $ingresos=DB::table('ingreso as i')
-            ->join('persona as p', 'i.idproveedor','=','p.idpersona')// persona une con proveedor  
+            ->join('persona as p', 'i.idproveedor','=','p.idpersona')// persona une con proveedor
             ->join('detalle_ingreso as di','i.idingreso','=','di.idingreso')// realiza la union de ingreso llave primaria con la foranea de detalle de ingreso
             ->select('i.idingreso','i.fecha_hora','p.nombre','i.tipo_comprobante','i.serie_comprobante','i.num_comprobante','i.impuesto','i.estado',DB::raw('sum(di.cantidad * precio_compra) as total')) //obtiene de la tabla ingreso fecha hora de la persona el nombre etc.
             // en la funcion raw me dice que sum es igual a la cantidad por el precio y eso me lo manda a total  y lo muestra
-            ->where('i.num_comprobante','LIKE','%'.$query.'%') //con like busca tanto al inicio como al final de la cadena 
+            ->where('i.num_comprobante','LIKE','%'.$query.'%') //con like busca tanto al inicio como al final de la cadena
             ->orderBy('i.idingreso','desc')// ordeno los ingresos mas recientes primero
             ->groupBy('i.idingreso','i.fecha_hora','p.nombre','i.tipo_comprobante','i.serie_comprobante','i.num_comprobante','i.impuesto','i.estado')
             ->paginate(7) ;
-            return view('compras.ingreso.index',["ingresos"=>$ingresos,'searchText'=>$query]);
+            return view('compras.ingreso.index',["ingresos"=>$ingresos,"tecnicos"=>$tecnicos,'searchText'=>$query]);
 
-            
+
         }
     }
 
     public function create()
     {
+
+        $tecnicos = DB::table('tecnico')->get(); 
         $personas=DB::table('persona')
         ->where('tipo_persona','=','Proveedor')->get();
         $articulos=DB::table('articulo as art')
             ->select(DB::raw('CONCAT(art.codigo,": ",art.nombre)AS articulo'),'art.idarticulo')
             ->where('art.estado','=','Activo')
             ->get();
-        return view('compras.ingreso.create',["personas"=>$personas,"articulos"=>$articulos]);
+        return view('compras.ingreso.create',["personas"=>$personas,"tecnicos"=>$tecnicos,"articulos"=>$articulos]);
 
     }
 
@@ -71,7 +74,7 @@ class IngresoController extends Controller
             $ingreso->estado = 'A';
             $ingreso->save();
 
-           
+
             $idarticulo = $request->get('idarticulo');
             $cantidad = $request->get('cantidad');
             $precio_compra = $request->get('precio_compra');
@@ -91,7 +94,7 @@ class IngresoController extends Controller
             }
 
             DB::commit();
-        } catch (Exception $e) 
+        } catch (Exception $e)
         {
             DB::rollback();
         }

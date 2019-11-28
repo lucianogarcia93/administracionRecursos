@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Persona;
+use App\Tecnico;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\PersonaFormRequest;
 use DB;
@@ -37,7 +38,7 @@ class ProveedorController extends Controller
     {
         return view('compras.proveedor.create');
     }
- 
+
     public function store(PersonaFormRequest $request)
     {
         $persona=new Persona;
@@ -47,26 +48,26 @@ class ProveedorController extends Controller
         $persona->num_documento =$request->get('num_documento');
         $persona->direccion=$request->get('direccion');
         $persona->telefono =$request->get('telefono');
-        $persona->email =$request->get('email');    
+        $persona->email =$request->get('email');
         $persona->puntuacion=$request->get('puntuacion');
-        
-       
+
+
         $persona->save();
         return Redirect::to('compras/proveedor');
- 
+
     }
- 
+
     public function show($id)
     {
         return view ("compras.proveedor.show",["persona"=>Persona::findOrFail($id)]);
- 
+
     }
- 
+
     public function edit($id)
     {
      return view ("compras.proveedor.edit",["persona"=>Persona::findOrFail($id)]);
- 
- 
+
+
     }
     public function update(PersonaFormRequest $request ,$id)
     {
@@ -79,9 +80,9 @@ class ProveedorController extends Controller
         $persona->email =$request->get('email');
         $persona->update();
         return Redirect::to('compras/proveedor');
- 
- 
- 
+
+
+
     }
     public function destroy($id)
     {
@@ -89,7 +90,7 @@ class ProveedorController extends Controller
         $persona->tipo_persona ='Inactivo';
         $persona->update();
         return Redirect::to('compras/proveedor');
- 
+
     }
-    
+
 }

@@ -17,7 +17,7 @@
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
                                 <th>Opciones</th>
-        
+
                             </thead>
                             @foreach($categorias as $cat) <!--la variable que recibo del controlador la guardo en cat y la muestro-->
                                 <tr>
@@ -25,15 +25,15 @@
                                     <td>{{$cat->nombre}}</td>
                                     <td>{{$cat->descripcion}}</td>
                                     <td>
-                                        
+
                                         <a href="{{URL::action('CategoriaController@edit',$cat->idcategoria)}}"><button type="button" class="btn btn-info">Editar</button></a>
                                         <a href="" data-target="#modal-delete-{{$cat->idcategoria}}" data-toggle="modal">
                                         <button type="button" class="btn btn-danger">Eliminar</button>
                                         </a>
-                                        
+
 
                                     </td>
-                                
+
                                 </tr>
                                 @include('almacen.categoria.modal')
                             @endforeach
@@ -44,11 +44,11 @@
 
                     </div>
                     {{$categorias->render()}}
-                
+
                 </div>
-            
+
             </div>
-    
+
 </div>
 
 @endsection

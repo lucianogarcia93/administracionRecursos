@@ -1,4 +1,4 @@
-<?php
+  <?php
 
 namespace App\Http\Controllers;
 
@@ -14,8 +14,8 @@ class ArticuloController extends Controller
 {
     public function __construct()
     {
-        
-        
+
+
         $this->middleware('auth');
     }
 
@@ -40,7 +40,7 @@ class ArticuloController extends Controller
         $categorias = DB::table('categoria')->where('condicion','=','1')->get();
         return view('almacen.articulo.create',["categorias"=>$categorias]);
     }
- 
+
     public function store(ArticuloFormRequest $request)
     {
         $articulo=new Articulo;
@@ -56,28 +56,28 @@ class ArticuloController extends Controller
             $file=Input::file('imagen');
             $file->move(public_path().'/imagenes/articulos/',$file->getClientOriginalName());
             $articulo->imagen=$file->getClientOriginalName();
-           
+
 
         }
         $articulo->save();
         return Redirect::to('almacen/articulo');
- 
+
     }
- 
+
     public function show($id)
     {
         return view ("almacen.articulo.show",["articulo"=>Articulo::findOrFail($id)]);
- 
+
     }
- 
+
     public function edit($id)
     {
-    
+
     $articulo = Articulo :: findOrFail($id);
     $categorias = DB::table('categoria')->where('condicion','=','1')->get();
      return view ("almacen.articulo.edit",["articulo"=>$articulo,"categorias"=>$categorias]);
- 
- 
+
+
     }
     public function update(ArticuloFormRequest $request ,$id)
     {
@@ -87,20 +87,20 @@ class ArticuloController extends Controller
         $articulo->nombre =$request->get('nombre');
         $articulo->stock =$request->get('stock');
         $articulo->descripcion =$request->get('descripcion');
-       
+
         if(Input::hasFile('imagen'))
         {
             $file=Input::file('imagen');
             $file->move(public_patch().'/imagenes/articulos/',$file->getClientOriginalName());
             $articulo->imagen=$file->getClientOriginalName();
-           
+
 
         }
         $articulo->update();
         return Redirect::to('almacen/articulo');
- 
- 
- 
+
+
+
     }
     public function destroy($id)
     {
@@ -108,6 +108,6 @@ class ArticuloController extends Controller
         $articulo->estado='Inactivo';
         $articulo->update();
         return Redirect::to('almacen/articulo');
- 
+
     }
 }
