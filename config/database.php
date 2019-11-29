@@ -1,6 +1,5 @@
 <?php
-$DATABASE_URL= parse_url('postgres: // wrfborxvijvxfp : e8278acf0140138a95f729925ab4466652203068bc59ee8fe89d77a5fadc7216 @ ec2-184-73-176-11.compute-1.amazonaws.com : 5432 / degmuv617o5fkp
-');
+//$DATABASE_URL= parse_url('postgres: // wrfborxvijvxfp : e8278acf0140138a95f729925ab4466652203068bc59ee8fe89d77a5fadc7216 @ ec2-184-73-176-11.compute-1.amazonaws.com : 5432 / degmuv617o5fkp');
 return [
 
     /*
@@ -54,14 +53,14 @@ return [
             'strict' => true,
             'engine' => null,
         ],
-
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => $DATABASE_URL['host'],
-            'port' => $DATABASE_URL['port'],
-            'database' => ltrim($DATABASE_URL["path"],"/"),
-            'username' => $DATABASE_URL['user'],
-            'password' => $DATABASE_URL['pass'],
+            'host' => env('DB_HOST', 'ec2-184-73-176-11.compute-1.amazonaws.com'),
+            'port' => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE', 'degmuv617o5fkp'),
+            'username' => env('DB_USERNAME', 'wrfborxvijvxfp'),
+            'password' => env('DB_PASSWORD', 'e8278acf0140138a95f729925ab4466652203068bc59ee8fe89d77a5fadc7216
+            '),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
