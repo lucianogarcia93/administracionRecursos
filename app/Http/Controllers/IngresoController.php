@@ -50,10 +50,8 @@ class IngresoController extends Controller
         $tecnicos = DB::table('tecnico')->get();
         $personas=DB::table('persona')
         ->where('tipo_persona','=','Proveedor')->get();
-        $articulos=DB::table('articulo as art')
-            ->select(DB::raw('CONCAT(art.codigo," ",art.nombre)AS articulo'),'art.idarticulo')
-            ->where('art.estado','=','Activo')
-            ->get();
+        $articulos=DB::table('articulo')->get();
+          
         return view('compras.ingreso.create',["personas"=>$personas,"tecnicos"=>$tecnicos,"articulos"=>$articulos]);
 
     }
@@ -121,14 +119,14 @@ class IngresoController extends Controller
         return view("compras.ingreso.show",["ingreso"=>$ingreso,"detalles"=>$detalles]);
     }
 
-      public function destroy($id)
-    {
-      $ingreso = Ingreso::findOrFail($id);
-      $ingreso->delete();
-        return Redirect::to('compras/ingreso');
-    }
-  
-  
+ public function destroy($id)
+  {
+    $ingreso = Ingreso::findOrFail($id);
+    $ingreso->delete();
+      return Redirect::to('compras/ingreso');
+  }
+
+
 
 
 }

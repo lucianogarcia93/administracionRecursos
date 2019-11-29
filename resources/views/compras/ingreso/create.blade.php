@@ -97,7 +97,7 @@
                                     <label for="">Articulo</label>
                                     <select name="pidarticulo" id="pidarticulo" class="form-control selectpicker" data-Live-search="true">
                                         @foreach($articulos as $articulo )
-                                            <option value="{{$articulo->idarticulo}}">{{$articulo->articulo}}</option>
+                                            <option value="{{$articulo->idarticulo}}">{{$articulo->nombre}}</option>
                                         @endforeach
 
                                     </select>
