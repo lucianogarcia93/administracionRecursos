@@ -35,9 +35,14 @@
                                     <td>
 
                               
-                                        <a href="" data-target="#modal-delete-{{$per->idpersona}}" data-toggle="modal">
-                                        <button type="button" class="btn btn-danger">Eliminar</button>
-                                        </a>
+                                        <form method="post" action="{{url('compras/proveedor/'.$per->idpersona) }}">
+                                            {{ csrf_field() }}
+                                            {{method_field('DELETE')}}
+                                            <a href="{{URL::action('ProveedorController@edit',$per->idpersona)}}"><button type="button" class="btn btn-info">Editar</button></a>
+                                            <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs">
+                                                                   <i class="fa fa-times"></i>
+                                                               </button>
+                                                                </form>
 
 
                                     </td>

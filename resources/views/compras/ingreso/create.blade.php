@@ -65,9 +65,8 @@
                             <label >Tipo de comprobante</label>
                             <select name="tipo_comprobante" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
 
-                                    <option value="Boleta">Boleta</option>
-                                    <option value="Factura">Factura</option>
-                                    <option value="Ticket">Ticket</option>
+                                    <option value="Boleta">Remito</option>
+                               
 
                             </select>
                         </div>

@@ -121,13 +121,14 @@ class IngresoController extends Controller
         return view("compras.ingreso.show",["ingreso"=>$ingreso,"detalles"=>$detalles]);
     }
 
-    public function destroy($id)
+      public function destroy($id)
     {
-        $ingreso=Ingreso::findOrfail($id);
-        $ingreso->Estado='C';
-        $ingreso->update();
+      $ingreso = Ingreso::findOrFail($id);
+      $ingreso->delete();
         return Redirect::to('compras/ingreso');
     }
+  
+  
 
 
 }

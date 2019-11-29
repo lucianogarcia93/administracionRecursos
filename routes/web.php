@@ -32,6 +32,15 @@ Route:: resource('seguridad/usuario','UsuarioController');
 //Route:: resource('reportes/listadoproveedores','UsuarioController');
 
 
+// rutas de eliminacion
+
+Route::delete('compras/tecnico','VerdtecnicoController@destroy');
+Route::delete('compras/proveedor','ProveedorController@destroy');
+Route::delete('compras/ingreso','IngresoController@destroy');
+Route::delete('almacen/categoria','CategoriaController@destroy ');
+Route::delete('almacen/articulo','CategoriaController@destroy ');
+
+
 
 Route::get('reportes/listadeprooverdores', function () {
     $pdf=PDF::loadHtml('

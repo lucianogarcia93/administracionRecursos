@@ -70,4 +70,11 @@ class VerdtecnicoController extends Controller
 
 
     }
+    public function destroy($id)
+    {
+      $tecnico = Tecnico::findOrFail($id);
+      $tecnico->delete();
+      return Redirect::to('compras/tecnico');
+    }
+
 }

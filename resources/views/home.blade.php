@@ -14,7 +14,9 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                                        
+                    Estas Logeado, para proceder a la Pagina Principal Presiona el Boton.
+                    <a href="http://127.0.0.1:8000/compras/ingreso"> <button type="button" name="button"> Pagina Principal</button></a>
                 </div>
             </div>
         </div>

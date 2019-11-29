@@ -39,10 +39,13 @@
                                     <td>
 
         
-                                        <a href="" data-target="#modal-delete-{{$ing->idingreso}}" data-toggle="modal">
-                                        <button type="button" class="btn btn-danger">Anular</button>
-                                        </a>
-
+                                        <form method="post" action="{{url('compras/ingreso/'.$ing->idingreso) }}">
+                                            {{ csrf_field() }}
+                                            {{method_field('DELETE')}}
+                                            <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs">
+                                            <i class="fa fa-times"></i>
+                                            </button>
+                                 </form>
 
                                     </td>
 

@@ -39,12 +39,14 @@
                                 @endforeach
 
                                     <td>
-
-                                      
-                                        <a href="" data-target="#modal-delete-{{$per->idpersona}}" data-toggle="modal">
-                                        <button type="button" class="btn btn-danger">Eliminar</button>
-                                        </a>
-
+                                        <form method="post" action="{{url('compras/tecnico/'.$per->idtecnico) }}">
+                                            <a href="{{URL::action('VerdtecnicoController@edit',$per->idtecnico)}}"><button type="button" class="btn btn-info">Editar</button></a>
+                                            {{ csrf_field() }}
+                                            {{method_field('DELETE')}}
+                                            <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs">
+                                                                   <i class="fa fa-times"></i>
+                                                               </button>
+                                                                </form>
 
                                     </td>
 
