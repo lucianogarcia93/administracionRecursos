@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ADVentas </title>
+    <title>ADGestion </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -29,9 +29,9 @@
         <!-- Logo -->
         <a href="index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>AD</b>V</span>
+          <span class="logo-mini"><b>AD</b>G</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>ADVentas</b></span>
+          <span class="logo-lg"><b>ADGestion</b></span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
@@ -49,7 +49,8 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <small class="bg-red">Online</small>
-                  <span class="hidden-xs">Franco</span>
+                   
+                    <span class="hidden-xs">{{ Auth::user()->name}}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -106,8 +107,35 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{url('/compras/ingreso')}}"><i class="fa fa-circle-o"></i> Ingresos</a></li>
-              <li><a href="{{url('/compras/proveedor')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
-              <li><a href="{{url('/compras/tecnico')}}"><i class="fa fa-circle-o"></i> Tecnicos</a></li>
+                <li><a href="{{url('/compras/proveedor')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                <li><a href="{{url('/compras/tecnico')}}"><i class="fa fa-circle-o"></i> Tecnicos</a></li>
+              </ul>
+            </li>
+
+
+            <li class="treeview">
+              <a href="#">
+                <small class="label pull-right bg-green">Excel</small>
+                
+                 <i class="fa  pull-right"></i><span>Exportar a Excel</span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{route ('articulos.excel')}}"><i class="fa fa-circle-o"></i> Articulos</a></li>
+                <li><a href="{{route ('proveedores.excel')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li> 
+                <li><a href="{{route ('tecnicos.excel')}}"><i class="fa fa-circle-o"></i> Tecnicos</a></li>
+              </ul>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                <small class="label pull-right bg-red">PDF</small>
+                
+                 <i class="fa  pull-right"></i><span>Exportar a PDF</span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{url('')}}"><i class="fa fa-circle-o"></i> Articulos</a></li>
+                <li><a href="{{url('')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                <li><a href="{{url('')}}"><i class="fa fa-circle-o"></i> Tecnicos</a></li>
               </ul>
             </li>
 
@@ -139,7 +167,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Sistema de Ventas</h3>
+                  <h3 class="box-title">Sistema de Gestion</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 

@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\TecnicoFormRequest;
 use DB;
 use Illuminate\Auth\Middleware\Authenticate;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\TecnicosExport;
 
 class VerdtecnicoController extends Controller
 {
@@ -75,6 +77,10 @@ class VerdtecnicoController extends Controller
       $tecnico = Tecnico::findOrFail($id);
       $tecnico->delete();
       return Redirect::to('compras/tecnico');
+    }
+    public function exportExcel()
+    {
+        return Excel::download(new TecnicosExport,'tecnicos-list.xlsx');
     }
 
 }

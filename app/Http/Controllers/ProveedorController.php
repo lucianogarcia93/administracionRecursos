@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\PersonaFormRequest;
 use DB;
 use Illuminate\Auth\Middleware\Authenticate;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ProveedorExport;
 
 
 class ProveedorController extends Controller
@@ -90,5 +92,11 @@ class ProveedorController extends Controller
       $persona->delete();
         return Redirect::to('compras/proveedor');
     }
+
+    public function exportExcel()
+    {
+        return Excel::download(new ProveedorExport,'proveedores-list.xlsx');
+    }
+
 
 }

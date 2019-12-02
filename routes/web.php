@@ -40,6 +40,11 @@ Route::delete('compras/ingreso','IngresoController@destroy');
 Route::delete('almacen/categoria','CategoriaController@destroy ');
 Route::delete('almacen/articulo','CategoriaController@destroy ');
 
+//rutas para exportar documentos 
+
+Route::get('articulos-list-excel', 'ArticuloController@exportExcel')->name('articulos.excel');
+Route::get('tecnicos-list-excel', 'VerdtecnicoController@exportExcel')->name('tecnicos.excel');
+Route::get('proveedores-list-excel', 'ProveedorController@exportExcel')->name('proveedores.excel');
 
 
 Route::get('reportes/listadeprooverdores', function () {

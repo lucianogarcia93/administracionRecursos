@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Input;
 use App\Http\Requests\ArticuloFormRequest;
 use App\Articulo;
 use App\Categoria;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ArticulosExport;
+
+
 use DB;
 use Illuminate\Auth\Middleware\Authenticate;
 
@@ -110,5 +114,10 @@ class ArticuloController extends Controller
         $articulo->update();
         return Redirect::to('almacen/articulo');
 
+    }
+
+    public function exportExcel()
+    {
+        return Excel::download(new ArticulosExport,'articulos-list.xlsx');
     }
 }
