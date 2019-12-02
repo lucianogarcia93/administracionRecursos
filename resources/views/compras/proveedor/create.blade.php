@@ -33,7 +33,7 @@
                         </div>
                     </div>
 
-                   
+
 
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
@@ -55,7 +55,7 @@
                         <div class="form-group">
                             <label for="num_documento" class="">Numero de Documento</label>
                             <input type="text" name="num_documento" value="{{old ('num_documento')}}" class="form-control "placeholder="Numero de documento..." >
-                        </div>    
+                        </div>
 
                     </div>
 
@@ -67,7 +67,7 @@
                         </div>
                     </div>
 
-                    
+
 
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
@@ -79,23 +79,23 @@
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
                             <label >Puntuacion</label>
-                            
-                                <input type="number" name="puntuacion" id="puntuacion" min="1" max="10" step="1" value="1">
+
+                                <input type="number" name="puntuacion" id="puntuacion" min="1" max="5" step="1" value="1">
                             </select>
                         </div>
                     </div>
 
                 <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                     <div class="form-group" >
-                        
+
                         <button type="submit" class="btn btn-primary">Guardar</button>
-                        
+
                         <button type="reset" class="btn btn-danger">Cancelar</button>
-                        
-                        
+
+
                     </div>
                </div>
-               
+
         </div>
 
 

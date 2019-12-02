@@ -5,6 +5,7 @@
     <div class="colg-lg-8 col-md-8 col-xs-12">
 
         <h3>Listado de Ingresos <a href="ingreso/create" ><button class="btn btn-success">Nuevo</button></h3></a>
+         <h3><a href="{{route('ingresos.pdf')}}" ><button class="btn btn-success">Exportar Datos </button></h3></a>
             @include('compras.ingreso.search')
    </div>
 
@@ -38,7 +39,7 @@
 
                                     <td>
 
-        
+
                                         <form method="post" action="{{url('compras/ingreso/'.$ing->idingreso) }}">
                                             {{ csrf_field() }}
                                             {{method_field('DELETE')}}

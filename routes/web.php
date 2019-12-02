@@ -30,6 +30,8 @@ Route:: resource('compras/ingreso','IngresoController');
 //Route:: resource('ventas/venta','VentaController');
 Route:: resource('seguridad/usuario','UsuarioController');
 //Route:: resource('reportes/listadoproveedores','UsuarioController');
+Route:: resource('compras/ranking','RankingController');
+Route::get('ingreso-list-pdf', 'IngresoController@exportPdf')->name('ingresos.pdf');
 
 
 // rutas de eliminacion
@@ -40,7 +42,7 @@ Route::delete('compras/ingreso','IngresoController@destroy');
 Route::delete('almacen/categoria','CategoriaController@destroy ');
 Route::delete('almacen/articulo','CategoriaController@destroy ');
 
-//rutas para exportar documentos 
+//rutas para exportar documentos
 
 Route::get('articulos-list-excel', 'ArticuloController@exportExcel')->name('articulos.excel');
 Route::get('tecnicos-list-excel', 'VerdtecnicoController@exportExcel')->name('tecnicos.excel');

@@ -49,7 +49,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <small class="bg-red">Online</small>
-                   
+
                     <span class="hidden-xs">{{ Auth::user()->name}}</span>
                 </a>
                 <ul class="dropdown-menu">
@@ -109,6 +109,7 @@
                 <li><a href="{{url('/compras/ingreso')}}"><i class="fa fa-circle-o"></i> Ingresos</a></li>
                 <li><a href="{{url('/compras/proveedor')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
                 <li><a href="{{url('/compras/tecnico')}}"><i class="fa fa-circle-o"></i> Tecnicos</a></li>
+                <li><a href="{{url('/compras/ranking')}}"><i class="fa fa-circle-o"></i> Ranking</a></li>
               </ul>
             </li>
 
@@ -116,28 +117,17 @@
             <li class="treeview">
               <a href="#">
                 <small class="label pull-right bg-green">Excel</small>
-                
+
                  <i class="fa  pull-right"></i><span>Exportar a Excel</span>
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{route ('articulos.excel')}}"><i class="fa fa-circle-o"></i> Articulos</a></li>
-                <li><a href="{{route ('proveedores.excel')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li> 
+                <li><a href="{{route ('proveedores.excel')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
                 <li><a href="{{route ('tecnicos.excel')}}"><i class="fa fa-circle-o"></i> Tecnicos</a></li>
               </ul>
             </li>
 
-            <li class="treeview">
-              <a href="#">
-                <small class="label pull-right bg-red">PDF</small>
-                
-                 <i class="fa  pull-right"></i><span>Exportar a PDF</span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="{{url('')}}"><i class="fa fa-circle-o"></i> Articulos</a></li>
-                <li><a href="{{url('')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
-                <li><a href="{{url('')}}"><i class="fa fa-circle-o"></i> Tecnicos</a></li>
-              </ul>
-            </li>
+
 
             </li>
             <li>

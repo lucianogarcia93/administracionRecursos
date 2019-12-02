@@ -13,6 +13,7 @@ use Carbon\Carbon; //con este use me permite usar fecha y hora de mi zona horari
 use Response;
 use Illuminate\Support\Collection;
 use Illuminate\Auth\Middleware\Authenticate;
+use Barryvdh\DomPDF\Facade as PDF;
 
 
 
@@ -51,7 +52,7 @@ class IngresoController extends Controller
         $personas=DB::table('persona')
         ->where('tipo_persona','=','Proveedor')->get();
         $articulos=DB::table('articulo')->get();
-          
+
         return view('compras.ingreso.create',["personas"=>$personas,"tecnicos"=>$tecnicos,"articulos"=>$articulos]);
 
     }
@@ -100,6 +101,24 @@ class IngresoController extends Controller
 
         return Redirect::to('compras/ingreso');
     }
+
+    public function exportPdf()
+ {
+
+     $tecnicos = DB::table('tecnico')->get();
+     $ingresos=DB::table('ingreso as i')
+     ->join('persona as p', 'i.idproveedor','=','p.idpersona')// persona une con proveedor
+     ->join('detalle_ingreso as di','i.idingreso','=','di.idingreso')// realiza la union de ingreso llave primaria con la foranea de detalle de ingreso
+     ->select('i.idingreso','i.fecha_hora','p.nombre','i.tipo_comprobante','i.serie_comprobante','i.num_comprobante','i.impuesto','i.estado',DB::raw('sum(di.cantidad * precio_compra) as total')) //obtiene de la tabla ingreso fecha hora de la persona el nombre etc.
+     // en la funcion raw me dice que sum es igual a la cantidad por el precio y eso me lo manda a total  y lo muestra
+     ->orderBy('i.idingreso','desc')// ordeno los ingresos mas recientes primero
+     ->groupBy('i.idingreso','i.fecha_hora','p.nombre','i.tipo_comprobante','i.serie_comprobante','i.num_comprobante','i.impuesto','i.estado')
+     ->paginate(7) ;
+
+     $pdf= PDF::loadView('pdf.ingresos', ["ingresos"=>$ingresos,"tecnicos"=>$tecnicos]);
+     return $pdf->download('ingresos-list-pdf');
+
+ }
 
     public function show($id)
     {
