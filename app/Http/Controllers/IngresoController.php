@@ -116,7 +116,7 @@ class IngresoController extends Controller
      ->paginate(7) ;
 
      $pdf= PDF::loadView('pdf.ingresos', ["ingresos"=>$ingresos,"tecnicos"=>$tecnicos]);
-     return $pdf->download('ingresos-list-pdf');
+     return $pdf->download('ingresos-list-pdf.pdf');
 
  }
 
