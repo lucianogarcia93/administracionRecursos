@@ -65,38 +65,6 @@ class ProveedorController extends Controller
 
     }
 
-    public function edit($id)
-    {
-     return view ("compras.proveedor.edit",["persona"=>Persona::findOrFail($id)]);
-
-
-    }
-    public function update(PersonaFormRequest $request ,$id)
-    {
-        $persona = Persona::findOrFail($id);
-        $persona->nombre =$request->get('nombre');
-        $persona->tipo_documento =$request->get('tipo_documento');
-        $persona->num_documento =$request->get('num_documento');
-        $persona->direccion=$request->get('direccion');
-        $persona->telefono =$request->get('telefono');
-        $persona->email =$request->get('email');
-        $persona->update();
-        return Redirect::to('compras/proveedor');
-
-
-
-    }
-    public function destroy($id)
-    {
-      $persona = Persona::findOrFail($id);
-      $persona->delete();
-        return Redirect::to('compras/proveedor');
-    }
-
-    public function exportExcel()
-    {
-        return Excel::download(new ProveedorExport,'proveedores-list.xlsx');
-    }
-
+  
 
 }

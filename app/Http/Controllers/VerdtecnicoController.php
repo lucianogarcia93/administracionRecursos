@@ -34,7 +34,7 @@ class VerdtecnicoController extends Controller
             return view('compras.tecnico.index',["tecnicos"=>$tecnicos,"personas"=>$personas,'searchText'=>$query]);
         }
 
-        
+
     }
     public function create()
     {
@@ -59,28 +59,5 @@ class VerdtecnicoController extends Controller
 
     }
 
-    public function show($id)
-    {
-
-        return view ("compras.tecnico.show",["tecnico"=>Tecnico::findOrFail($id)]);
-
-    }
-
-    public function edit($id)
-    {
-     return view ("compras.tecnico.edit",["tecnico"=>Tecnico::findOrFail($id)]);
-
-
-    }
-    public function destroy($id)
-    {
-      $tecnico = Tecnico::findOrFail($id);
-      $tecnico->delete();
-      return Redirect::to('compras/tecnico');
-    }
-    public function exportExcel()
-    {
-        return Excel::download(new TecnicosExport,'tecnicos-list.xlsx');
-    }
-
+  
 }

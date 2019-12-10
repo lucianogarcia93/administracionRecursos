@@ -36,11 +36,6 @@ Route::get('ingreso-list-pdf', 'IngresoController@exportPdf')->name('ingresos.pd
 
 // rutas de eliminacion
 
-Route::delete('compras/tecnico','VerdtecnicoController@destroy');
-Route::delete('compras/proveedor','ProveedorController@destroy');
-Route::delete('compras/ingreso','IngresoController@destroy');
-Route::delete('almacen/categoria','CategoriaController@destroy ');
-Route::delete('almacen/articulo','CategoriaController@destroy ');
 
 //rutas para exportar documentos
 
