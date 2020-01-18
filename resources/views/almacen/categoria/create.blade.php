@@ -35,7 +35,7 @@
                         
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         
-                        <button type="reset" class="btn btn-danger">Cancelar</button>
+                        <a class="btn btn-danger" href="/almacen/categoria">Cancelar</a>
                         
                         
                     </div>

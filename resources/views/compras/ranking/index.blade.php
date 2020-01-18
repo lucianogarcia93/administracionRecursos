@@ -5,7 +5,7 @@
     <div class="colg-lg-8 col-md-8 col-xs-12">
 
 
-        <h3>Ranking de Proveedores </h3>
+        <h3>Ranking de Proveedores</h3><br>
 
 
    </div>

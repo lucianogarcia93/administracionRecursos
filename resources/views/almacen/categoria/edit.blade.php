@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
-            <h3>Editar categoria:{{$categoria -> nombre}}</h3>
+            <h3>Editar categoria: {{$categoria -> nombre}}</h3><br>
 
                 @if(count($errors) > 0)
                 <div class="alert alert-danger">
@@ -35,7 +35,7 @@
                         
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         
-                        <button type="reset" class="btn btn-danger">Cancelar</button>
+                        <a class="btn btn-danger" href="/almacen/categoria">Cancelar</a>
                         
                         
                     </div>
