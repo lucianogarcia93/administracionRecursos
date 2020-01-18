@@ -32,6 +32,7 @@
                             <input type="text" name="nombre" required value="{{old ('nombre')}}" class="form-control "placeholder="Nombre...">
                         </div>
                     </div>
+
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
                             <label >Documento</label>
@@ -72,8 +73,8 @@
 
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
-                                <label for="especializacion" class="">especializacion</label>
-                                <input type="text" name="especializacion"  value="{{old ('especializacion')}}" class="form-control "placeholder="Numero de telefono..." >
+                                <label for="especializacion" class="">Especializacion</label>
+                                <input type="text" name="especializacion"  value="{{old ('especializacion')}}" class="form-control "placeholder="especializacion..." >
                         </div>
                     </div>
 
@@ -102,12 +103,12 @@
 
                         <button type="submit" class="btn btn-primary">Guardar</button>
 
-                        <button type="reset" class="btn btn-danger">Cancelar</button>
-
+                        
+                        <a class="btn btn-danger" href="/compras/tecnico">Cancelar</a>
 
                     </div>
                </div>
-
+                    
         </div>
 
 

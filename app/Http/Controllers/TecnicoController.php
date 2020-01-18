@@ -34,7 +34,7 @@ class TecnicoController extends Controller
     {
         return view('compras.tecnico.create');
     }
-
+ 
     public function store(PersonaFormRequest $request)
     {
         $persona=new Persona;
@@ -44,15 +44,22 @@ class TecnicoController extends Controller
         $persona->num_documento =$request->get('num_documento');
         $persona->telefono =$request->get('telefono');
         $persona->email =$request->get('email');
-
+       
         $persona->save();
         return Redirect::to('compras/tecnico');
-
+ 
     }
 
     public function show($id)
     {
         return view ("compras.tecnico.show",["persona"=>Persona::findOrFail($id)]);
-
-  
+ 
+    }
+ 
+    public function edit($id)
+    {
+     return view ("compras.tecnico.edit",["persona"=>Persona::findOrFail($id)]);
+ 
+ 
+    }
 }

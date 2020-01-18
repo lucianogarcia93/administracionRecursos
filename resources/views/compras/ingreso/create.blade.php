@@ -27,7 +27,7 @@
                 <div class="row">
 
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                        <div class="form-group">
+                        <div class="form-group"><br>
                             <label for="proveedor" class="">Proveedor</label>
                             <select name="idproveedor" id="idproveedor" class="form-control selectpicker" data-Live-search="true">
                                 @foreach($personas as $persona)
@@ -35,23 +35,24 @@
                                 @endforeach
                             </select>
 
-                            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                                <div class="form-group">
-                                    <label for="nombre" class="">Tecnico</label>
-                                    <select name="tem" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
-                          @foreach($personas as $per)
-                                        @foreach($tecnicos as $tec)
-  			                                           @if($per->idpersona == $tec->idpersona )
-  					                                                 <option value="{{$tec->idpersona}}">{{$tec->nombre}}</option>
-                                                             
-       			                                       @endif
-                                        @endforeach
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                        <div class="form-group"><br>
+                            <label for="nombre" class="">Tecnico</label>
+                            <select name="tem" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
+                                
+                            @foreach($personas as $per)
+                                @foreach($tecnicos as $tec)
+                                    @if($per->idpersona == $tec->persona_idpersona)
+
+                                        <option value="{{$tec->persona_idpersona}}">{{$tec->nombre}}</option>
+                                      
+                                    @endif
+                                @endforeach
                             @endforeach
 
-                                    </select>
-                                </div>
-                            </div>
-
+                             </select>
+                        </div>
+                    </div>
 
                         </div>
                     </div>
@@ -61,7 +62,7 @@
 
 
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-                        <div class="form-group">
+                        <div class="form-group"><br>
                             <label >Tipo de comprobante</label>
                             <select name="tipo_comprobante" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
 
@@ -74,14 +75,14 @@
 
 
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-                        <div class="form-group">
+                        <div class="form-group"><br>
                             <label for="serie_comprobante" class="">Serie Comprobante</label>
                             <input type="text" name="serie_comprobante" value="{{old ('serie_comprobante')}}" class="form-control "placeholder="Serie Comprobante..." >
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-                        <div class="form-group">
+                        <div class="form-group"><br>
                             <label for="num_comprobante" class="">Numero Comprobante</label>
                             <input type="text" name="num_comprobante" required value="{{old ('num_comprobante')}}" class="form-control "placeholder="Numero Comprobante..." >
                         </div>
@@ -163,9 +164,8 @@
                     <div class="form-group">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
                         <button type="submit" class="btn btn-primary">Guardar</button>
-                        <button type="reset" class="btn btn-danger">Cancelar</button>
-
-
+                        <a class="btn btn-danger" href="/compras/ingreso">Cancelar</a>
+                        <!--<button type="reset" class="btn btn-danger">Cancelar</button>-->
                     </div>
                </div>
 
@@ -183,24 +183,20 @@
                 agregar();
                 });
             });
-
             var cont=0;
             var total=0;
             subtotal=[];
             $("#guardar").hide();
-
             function agregar(){
                 idarticulo=$("#pidarticulo").val();
                 articulo=$("#pidarticulo option:selected").text();
                 cantidad=$("#pcantidad").val();
                 precio_compra=$("#pprecio_compra").val();
                 //precio_venta=$("#pprecio_venta").val();
-
                 if (idarticulo!="" && cantidad!="" && cantidad>0 && precio_compra!="")
                 {
                 subtotal[cont]=(cantidad*precio_compra);
                 total=total+subtotal[cont];
-
                 var fila='<tr class="selected" id="fila'+cont+
                 '"><td><button type="button" class="btn btn-warning" onclick="eliminar('+cont+');">X</button></td><td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'
                     +articulo+'</td><td><input type="number" name="cantidad[]" value="'+cantidad+
@@ -212,20 +208,17 @@
                 $('#total').html("$ " + total);
                 evaluar();
                 $('#detalles').append(fila);
-
                 }
                 else
                 {
                 alert("Error al ingresar el detalle del ingreso, revise los datos del articulo")
                 }
             }
-
             function limpiar(){
                 $("#pcantidad").val("");
                 $("#pprecio_compra").val("");
                 $("#pprecio_venta").val("");
             }
-
             function evaluar()
             {
                 if (total>0)
@@ -237,14 +230,12 @@
                 $("#guardar").hide();
                 }
             }
-
             function eliminar(index){
             total=total-subtotal[index];
                 $("#total").html("$ " + total);
                 $("#fila" + index).remove();
                 evaluar();
             }
-
             </script>
 @endpush
 @endsection

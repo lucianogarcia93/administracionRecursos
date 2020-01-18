@@ -34,7 +34,7 @@ class VerdtecnicoController extends Controller
             return view('compras.tecnico.index',["tecnicos"=>$tecnicos,"personas"=>$personas,'searchText'=>$query]);
         }
 
-
+        
     }
     public function create()
     {
@@ -52,12 +52,59 @@ class VerdtecnicoController extends Controller
         $tecnico->telefono =$request->get('telefono');
         $tecnico->email =$request->get('email');
         $tecnico->especializacion =$request->get('especializacion');
-        $tecnico->idpersona=$request->get('idpersona');
+        $tecnico->persona_idpersona=$request->get('idpersona');
+        //dd($tecnico->persona_idpersona);
 
         $tecnico->save();
         return Redirect::to('compras/tecnico');
 
     }
 
-  
+    public function show($id)
+    {
+
+        return view ("compras.tecnico.show",["tecnico"=>Tecnico::findOrFail($id)]);
+
+    }
+
+    public function edit($id)
+    {
+
+    $personas = DB::table('persona')->get();
+    $tecnico = Tecnico::findOrFail($id);
+
+
+     return view ("compras.tecnico.edit", compact('personas', 'tecnico'));
+
+
+    }
+
+    public function update(TecnicoFormRequest $request, $id){
+ 
+        //dd($request);
+        $tecnico = Tecnico::findOrFail($id);
+        $tecnico->nombre =$request->get('nombre');
+        $tecnico->tipo_documento =$request->get('tipo_documento');
+        $tecnico->num_documento =$request->get('num_documento');
+        $tecnico->telefono =$request->get('telefono');
+        $tecnico->email =$request->get('email');
+        $tecnico->especializacion =$request->get('especializacion');
+        $tecnico->persona_idpersona=$request->get('idpersona');
+
+        $tecnico->update();
+        return Redirect::to('compras/tecnico');
+
+    }
+
+    public function destroy($id)
+    {
+      $tecnico = Tecnico::findOrFail($id);
+      $tecnico->delete();
+      return Redirect::to('compras/tecnico');
+    }
+    public function exportExcel()
+    {
+        return Excel::download(new TecnicosExport,'tecnicos-list.xlsx');
+    }
+
 }

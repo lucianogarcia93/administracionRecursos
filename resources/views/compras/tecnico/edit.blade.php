@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
-            <h3>Editar Tecnico:{{$tecnico -> nombre}}</h3>
+            <h3>Editar Tecnico: {{$tecnico -> nombre}}</h3><br>
 
                 @if(count($errors) > 0)
                 <div class="alert alert-danger">
@@ -32,6 +32,28 @@
                         </div>
                     </div>
 
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <label >Documento</label>
+                            <select name="tipo_documento" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
+
+                                    <option value="DNI">DNI</option>
+                                    <option value="CUIL">CUIL</option>
+
+
+                            </select>
+                        </div>
+                    </div>
+
+                  <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="num_documento" class="">Numero de Documento</label>
+                            <input type="text" name="num_documento" value="{{$tecnico->num_documento}}" class="form-control "placeholder="Numero de documento..." >
+                        </div>
+
+                    </div>
+
+
 
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
@@ -49,6 +71,29 @@
                         </div>
                     </div>
 
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                        <div class="form-group">
+                                <label for="especializacion" class="">Especializacion</label>
+                                <input type="text" name="especializacion"  value="{{$tecnico->especializacion}}" class="form-control "placeholder="especializacion..." >
+                        </div>
+                    </div>
+
+                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="nombre" class="">Proveedor</label>
+                            <select name="idpersona" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
+                                @foreach($personas as $per)
+
+                                    <option value="{{$per->idpersona}}">{{$per->nombre}}</option>
+
+                                @endforeach
+
+                            </select>
+                        </div>
+                    </div>
+
+
+
 
 
 
@@ -57,7 +102,7 @@
 
                         <button type="submit" class="btn btn-primary">Guardar</button>
 
-                        <button type="reset" class="btn btn-danger">Cancelar</button>
+                        <a class="btn btn-danger" href="/compras/tecnico">Cancelar</a>
 
 
                     </div>
