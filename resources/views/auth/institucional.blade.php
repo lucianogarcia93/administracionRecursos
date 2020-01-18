@@ -5,9 +5,17 @@
 	<title>SAMSOFT</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body style="background:yellow; ">
-		<br>
-	<a href="/s">  <input type="button" value="Login" >   </a>
+<body style="background:orange;"><br>
+	
+<style type="text/css">
+	a input{
+		margin-left: 14px;
+		width: 5%;
+	}
+</style>
+	<a href="/sesion">  
+		<b><input type="button" value="Login"></b>   
+	</a>
 	<!-- Image and text -->
 	<div class="container-fluid">
 		<row>
@@ -17,8 +25,8 @@
 				</div>
 				<div class="col">
 				<h1>
-						SamSoft
-					</h1>
+					<b>SamSoft</b>
+				</h1>
 				</div>
 			</nav>
 		</row>
@@ -75,7 +83,6 @@
 						<li class="list-group-item">Lanzar nuevas campañas publicitarias con el fin de lograr una mayor exposición del producto.</li>
 						<li class="list-group-item">Abrir nuevos puntos de ventas con el fin de lograr una mayor cobertura del producto.</li>
 						<li class="list-group-item">Buscar las últimas actualizaciones del mercado.</li>
-						<li class="list-group-item">Vestibulum at eros</li>
 					</ul>
 				</div>
 				

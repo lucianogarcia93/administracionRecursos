@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('auth/institucional');
 });
-Route::get('/s', function () {
+Route::get('/sesion', function () {
     return view('auth/login');
 });
 
