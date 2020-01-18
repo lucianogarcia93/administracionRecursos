@@ -44,10 +44,8 @@
 
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
-                            <label >Documento</label>
+                            <label >Documento</label><br>
                             <input type="text" value="CUIT" name="tipo_documento" id="documento">
-
-                            </select>
                         </div>
                     </div>
 
@@ -89,7 +87,7 @@
                     <div class="form-group" >
 
                         <button type="submit" class="btn btn-primary">Guardar</button>
-                        
+
                         <a class="btn btn-danger" href="/compras/proveedor">Cancelar</a>
 
 

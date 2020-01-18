@@ -14,13 +14,14 @@
                         <table class="table table-striped table-bordered table-condensed table-hover">
                             <thead>
 
-                                <th>nombre</th>
+                                <th>Nombre</th>
                                 <th>Tipo Doc.</th>
                                 <th>Numero de Doc.</th>
                                 <th>Telefono</th>
                                 <th>Email</th>
-                                <th>especializacion</th>
+                                <th>Especializacion</th>
                                 <th>Proveedor</th>
+                                <th>Opciones</th>
 
                             </thead>
                             @foreach($tecnicos as $per) <!--la variable que recibo del controlador la guardo en cat y la muestro-->
@@ -33,7 +34,7 @@
                                     <td>{{$per->email}}</td>
                                     <td>{{$per->especializacion}}</td>
                                 @foreach($personas as $pe)
-                                 @if($pe->idpersona == $per->idpersona)
+                                 @if($pe->idpersona == $per->persona_idpersona)
                                     <td>{{$pe->nombre}}</td>
                                     @endif
                                 @endforeach

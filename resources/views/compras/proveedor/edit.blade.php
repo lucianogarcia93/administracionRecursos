@@ -43,10 +43,11 @@
 
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group">
-                            <label >Documento</label>
-                            <select name="tipo_documento" class= "form-control" ><!-- realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
+                            <label >Documento</label><br>
+                            <!--<select name="tipo_documento" class= "form-control"> realizo un opcion de categorias y llamo al objeto categorias y lo nombro como cat-->
+                                <input type="text" value="CUIT" name="tipo_documento" id="documento">
 
-                                @if($persona->tipo_documento=='DNI')
+                                <!--@if($persona->tipo_documento=='DNI')
                                     <option value="DNI"selected>DNI</option>
                                     <option value="DU">DU</option>
                                     <option value="PAS">PASAPORTE</option>
@@ -55,11 +56,11 @@
                                     <option value="DNI">DNI</option>
                                     <option value="PAS">PASAPORTE</option>
                                 @else
-                                    <option value="PAS" selected>PASAPORTE</option>
+                                    <option value="PAS" selected>P</option>
                                     <option value="DNI">DNI</option>
                                     <option value="DU">DU</option>  
-                                @endif           
-                            </select>
+                                @endif          
+                            </select> --> 
                         </div>
                     </div>
 
