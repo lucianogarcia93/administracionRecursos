@@ -92,7 +92,7 @@
         <div class="row">
                     <div class="panel panel-primary">
 
-                        <div class="panel-body">
+                      <!--  <div class="panel-body">
                             <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                                 <div class="form-group">
                                     <label for="">Articulo</label>
@@ -100,12 +100,12 @@
                                         @foreach($articulos as $articulo )
                                             <option value="{{$articulo->idarticulo}}">{{$articulo->nombre}}</option>
                                         @endforeach
-
                                     </select>
 
                                 </div>
 
-                            </div>
+                            </div>-->
+
                                 <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                                     <div class="form-group">
                                         <label for="cantidad">Cantidad</label>
@@ -114,6 +114,7 @@
                                     </div>
 
                                 </div>
+
                                 <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                                     <div class="form-group">
                                         <label for="precio_compra">Precio Compra</label>
