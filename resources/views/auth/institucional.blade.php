@@ -71,7 +71,7 @@
 					<h2><b><div class="panel-heading">VISION</div></b></h2>
 					<ul class="list-group">
 						<li class="list-group-item">Proveer soluciones de software apoyadas en tecnologías en constante evolución buscando permanentemente la diferenciación por la calidad del servicio y la satisfaccion del cliente.</li>
-						<li class="list-group-item">Mantener la calidad y servicios un 80% sobre la satisfacción del cliente</li>
+						<li class="list-group-item">Mantener la calidad y servicios un 80% sobre la satisfacción del cliente.</li>
 						<li class="list-group-item">Aumentar a un 20% la cartera de clientes en 4 años.</li>
 						<li class="list-group-item">Llegar al liderazgo en tecnología por medio de continuas innovaciones en nuestros productos.</li>
 					</ul>
@@ -83,7 +83,7 @@
 						<li class="list-group-item">Lanzar nuevas campañas publicitarias con el fin de lograr una mayor exposición del producto.</li>
 						<li class="list-group-item">Abrir nuevos puntos de ventas con el fin de lograr una mayor cobertura del producto.</li>
 						<li class="list-group-item">Buscar las últimas actualizaciones del mercado.</li>
-					</ul>
+					</ul><br><br>
 				</div>
 				
 				
