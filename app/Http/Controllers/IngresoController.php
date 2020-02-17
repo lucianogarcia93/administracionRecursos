@@ -119,7 +119,7 @@ class IngresoController extends Controller
      ->groupBy('i.idingreso','i.fecha_hora','p.nombre','i.tipo_comprobante','i.serie_comprobante','i.num_comprobante','i.impuesto','i.estado')
      ->paginate(7) ;
 
-     $pdf= PDF::loadView('pdf.ingresos', ["ingresos"=>$ingresos,"tecnicos"=>$tecnicos]);
+     $pdf= PDF::loadView('pdf.ingresos', ['ingresos'=>$ingresos,'tecnicos'=>$tecnicos]);
      return $pdf->download('ingresos-list-pdf.pdf');
 
  }
