@@ -120,6 +120,7 @@ class IngresoController extends Controller
      ->paginate(7) ;
 
      $pdf= PDF::loadView('pdf.ingresos', ['ingresos'=>$ingresos,'tecnicos'=>$tecnicos]);
+     error_reporting(E_ALL ^ E_DEPRECATED);
      return $pdf->download('ingresos-list-pdf.pdf');
 
  }
