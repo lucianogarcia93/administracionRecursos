@@ -5,13 +5,14 @@
 	<title>SAMSOFT</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body style="background:orange;"><br>
+<body style="background: url(https://images4.alphacoders.com/252/252928.jpg);"><br>
 	
 <style type="text/css">
 	a input{
 		margin-left: 14px;
 		width: 5%;
 	}
+
 </style>
 	<a href="/sesion">  
 		<b><input type="button" value="Login"></b>   
@@ -62,27 +63,27 @@
 		<div class="row">
 			<div class="list-group">
 				<div class="panel panel-default"><br>
-					<h2><b><div class="panel-heading">MISION</div></b></h2>
+					<h2 style="margin-left: 10px; color:white;"><b><div class="panel-heading">MISION</div></b></h2>
 					<ul class="list-group">
-						<li class="list-group-item">Somos una empresa dedicada a la comercialización y distribución de productos informáticos, desarrollo de aplicaciones informáticas de gestión, soluciones en Internet, servicio técnico y mantenimiento de equipos y sistemas informáticos, hosting, y consultoría de protección de datos. Ofreciendo una solución global a empresas, profesionales, administraciones y usuarios particulares, a todo el territorio nacional.</li>
+						<li class="list-group-item" style="background: black; color:white;">Somos una empresa dedicada a la comercialización y distribución de productos informáticos, desarrollo de aplicaciones informáticas de gestión, soluciones en Internet, servicio técnico y mantenimiento de equipos y sistemas informáticos, hosting, y consultoría de protección de datos. Ofreciendo una solución global a empresas, profesionales, administraciones y usuarios particulares, a todo el territorio nacional.</li>
 					</ul>
 				</div>
 				<div class="panel panel-default"><br>
-					<h2><b><div class="panel-heading">VISION</div></b></h2>
+					<h2 style="margin-left: 10px; color: white;"><b><div class="panel-heading">VISION</div></b></h2>
 					<ul class="list-group">
-						<li class="list-group-item">Proveer soluciones de software apoyadas en tecnologías en constante evolución buscando permanentemente la diferenciación por la calidad del servicio y la satisfaccion del cliente.</li>
-						<li class="list-group-item">Mantener la calidad y servicios un 80% sobre la satisfacción del cliente.</li>
-						<li class="list-group-item">Aumentar a un 20% la cartera de clientes en 4 años.</li>
-						<li class="list-group-item">Llegar al liderazgo en tecnología por medio de continuas innovaciones en nuestros productos.</li>
+						<li class="list-group-item" style="background: black; color:white;">Proveer soluciones de software apoyadas en tecnologías en constante evolución buscando permanentemente la diferenciación por la calidad del servicio y la satisfaccion del cliente.</li>
+						<li class="list-group-item" style="background: black; color:white;">Mantener la calidad y servicios un 80% sobre la satisfacción del cliente.</li>
+						<li class="list-group-item" style="background: black; color:white;">Aumentar a un 20% la cartera de clientes en 4 años.</li>
+						<li class="list-group-item" style="background: black; color:white;">Llegar al liderazgo en tecnología por medio de continuas innovaciones en nuestros productos.</li>
 					</ul>
 				</div>
 				<div class="panel panel-default"><br>
-					<h2><b><div class="panel-heading">ESTRATEGIAS</div></b></h2>
+					<h2 style="margin-left: 10px; color: white;"><b><div class="panel-heading">ESTRATEGIAS</div></b></h2>
 					<ul class="list-group">
-						<li class="list-group-item">Capacitar a nuestro personal, utilizar nuevas técnicas de motivación con el fin de aumentar la productividad del personal.</li>
-						<li class="list-group-item">Lanzar nuevas campañas publicitarias con el fin de lograr una mayor exposición del producto.</li>
-						<li class="list-group-item">Abrir nuevos puntos de ventas con el fin de lograr una mayor cobertura del producto.</li>
-						<li class="list-group-item">Buscar las últimas actualizaciones del mercado.</li>
+						<li class="list-group-item" style="background: black; color:white;">Capacitar a nuestro personal, utilizar nuevas técnicas de motivación con el fin de aumentar la productividad del personal.</li>
+						<li class="list-group-item" style="background: black; color:white;">Lanzar nuevas campañas publicitarias con el fin de lograr una mayor exposición del producto.</li>
+						<li class="list-group-item" style="background: black; color:white;">Abrir nuevos puntos de ventas con el fin de lograr una mayor cobertura del producto.</li>
+						<li class="list-group-item" style="background: black; color:white;">Buscar las últimas actualizaciones del mercado.</li>
 					</ul><br><br>
 				</div>
 				
@@ -95,8 +96,6 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	
-	
 	
 </body>
 </html>

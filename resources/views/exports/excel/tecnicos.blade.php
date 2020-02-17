@@ -17,7 +17,7 @@
             <td>{{ $tec->telefono}}</td>
             <td>{{ $tec->email}}</td>
             <td>{{ $tec->especializacion}}</td>
-            <td>{{ $tec->idpersona}}</td>
+            <td>{{ $tec->persona_idpersona}}</td>
         </tr>
     @endforeach
     </tbody>

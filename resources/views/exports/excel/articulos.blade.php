@@ -13,7 +13,7 @@
         <tr>
             <td>{{ $art->nombre }}</td>
             <td>{{ $art->codigo }}</td>
-            <td>{{ $art->idcategoria}}</td>
+            <td>{{ $art->categoria_idcategoria}}</td>
             <td>{{ $art->stock}}</td>
             <td>{{ $art->fecha_venc}}</td>
         </tr>
